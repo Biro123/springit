@@ -13,7 +13,7 @@ import java.util.List;
 @Entity
 @Data   // Uses Lombok to auto-generate getters, setters, equals, to-string etc.
 @NoArgsConstructor
-public class Link {
+public class Link extends Auditable {
 
     @Id
     @GeneratedValue

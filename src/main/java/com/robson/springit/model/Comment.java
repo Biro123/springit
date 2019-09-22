@@ -11,7 +11,7 @@ import javax.persistence.ManyToOne;
 @Entity
 @Data  // Uses Lombok to auto-generate getters, setters, equals, to-string etc.
 @NoArgsConstructor
-public class Comment {
+public class Comment extends Auditable {
 
     @Id
     @GeneratedValue
