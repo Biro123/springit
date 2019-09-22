@@ -6,6 +6,7 @@ import lombok.NoArgsConstructor;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 
 @Entity
 @Data  // Uses Lombok to auto-generate getters, setters, equals, to-string etc.
@@ -18,5 +19,7 @@ public class Comment {
     private String body;
 
     // Link
+    @ManyToOne
+    private Link link;
 
 }
