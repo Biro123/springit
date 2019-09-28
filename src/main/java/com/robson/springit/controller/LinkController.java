@@ -3,12 +3,14 @@ package com.robson.springit.controller;
 import com.robson.springit.model.Link;
 import com.robson.springit.repository.LinkRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 import java.util.Optional;
 
-@RestController
+@Controller
 @RequestMapping("/links")
 public class LinkController {
 
@@ -19,6 +21,11 @@ public class LinkController {
         this.linkRepository = linkRepository;
     }
 
+    @GetMapping("/foo")
+    public String foo(Model model) {
+        model.addAttribute("pageTitle", "This page is FOO!");
+        return "foo";
+    }
     // list
     @GetMapping("/")
     public List<Link> list() {
